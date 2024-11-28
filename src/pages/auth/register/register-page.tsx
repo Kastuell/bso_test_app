@@ -1,5 +1,5 @@
 import { Container } from "../../../shared/ui/container";
-import { RegisterForm } from "../../../widgets/auth";
+import { RegisterForm } from "../../../widgets/auth/register";
 
 export const RegisterPage = () => {
   return (
