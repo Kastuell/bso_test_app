@@ -2,8 +2,8 @@ import { Provider as ReduxProvider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RegisterPage } from "../../pages/auth/register";
 import { RootPage } from "../../pages/root";
+import { store } from "../../shared/store";
 import { RootLayout } from "../../widgets/layouts/root-layout";
-import { store } from "../store";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
 export const Provider = () => {
   return (
     <ReduxProvider store={store}>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router} />
     </ReduxProvider>
   );
 };
