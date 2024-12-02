@@ -4,6 +4,8 @@ import { RegisterPage } from "../../pages/auth/register";
 import { RootPage } from "../../pages/root";
 import { store } from "../../shared/store";
 import { RootLayout } from "../../widgets/layouts/root-layout";
+import { LoginPage } from "../../pages/auth/login/login-page";
+import { CatalogPage } from "../../pages/catalog/catalog-page";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: "catalog",
-        element: <div></div>,
+        element: <CatalogPage />,
       },
       {
         path: "cart",
@@ -32,7 +34,7 @@ const router = createBrowserRouter([
           },
           {
             path: "login",
-            element: <div></div>,
+            element: <LoginPage />,
           },
         ],
       },

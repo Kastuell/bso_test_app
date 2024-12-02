@@ -6,6 +6,7 @@ export type AuthResponseT = {
 };
 
 export type RegisterRequestT = {
-  identitifier: string;
+  email: string;
+  username: string;
   password: string;
 };

@@ -1,4 +1,7 @@
-import { Button, Form, FormProps, Input } from "antd";
+import { Button, Form, FormProps, Input, Spin } from "antd";
+import { useEffect } from "react";
+import { toast } from "sonner";
+import { useRegisterMutation } from "../../../shared/services/auth";
 
 type FieldType = {
   username: string;
@@ -7,15 +10,16 @@ type FieldType = {
 };
 
 export const RegisterForm = () => {
+  const [register, { isLoading, error }] = useRegisterMutation();
+
   const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
-    console.log("Success:", values);
+    register(values);
   };
 
-  const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (
-    errorInfo
-  ) => {
-    console.log("Failed:", errorInfo);
-  };
+  useEffect(() => {
+    if (error) if ("data" in error) toast(error.data.error.message);
+  }, [error]);
+
   return (
     <Form
       name="basic"
@@ -24,7 +28,6 @@ export const RegisterForm = () => {
       style={{ maxWidth: 600 }}
       initialValues={{ remember: true }}
       onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
       <Form.Item<FieldType>
@@ -62,7 +65,7 @@ export const RegisterForm = () => {
 
       <Form.Item label={null}>
         <Button type="primary" htmlType="submit">
-          Submit
+          {isLoading ? <Spin /> : "Register"}
         </Button>
       </Form.Item>
     </Form>
