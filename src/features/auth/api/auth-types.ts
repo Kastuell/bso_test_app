@@ -1,4 +1,4 @@
-import { UserT } from "./user-types";
+import { UserT } from "../../../shared/types/user-types";
 
 export type AuthResponseT = {
   user: UserT;

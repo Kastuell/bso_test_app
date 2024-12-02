@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { productApi } from "../../entities/product/api/product-api";
+import authSlice from "../../features/auth/model/auth-slice";
 import { listenerMiddleware } from "../middleware/auth";
 import { api } from "../services/api";
-import authSlice from "../../features/auth/auth-slice";
-import { productApi } from "../../entities/product/api/product-api";
 
 export const store = configureStore({
   reducer: {

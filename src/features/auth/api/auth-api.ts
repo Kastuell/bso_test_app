@@ -1,5 +1,5 @@
-import { AuthResponseT, RegisterRequestT } from "../types/auth-types";
-import { api } from "./api";
+import { api } from "../../../shared/services/api";
+import { AuthResponseT, RegisterRequestT } from "./auth-types";
 
 export const authApi = api.injectEndpoints({
   endpoints: (builder) => ({

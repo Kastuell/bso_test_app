@@ -1,11 +1,12 @@
 import { Provider as ReduxProvider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { LoginPage } from "../../pages/auth/login/login-page";
 import { RegisterPage } from "../../pages/auth/register";
+import { CartPage } from "../../pages/cart/cart-page";
+import { CatalogPage } from "../../pages/catalog/catalog-page";
 import { RootPage } from "../../pages/root";
 import { store } from "../../shared/store";
 import { RootLayout } from "../../widgets/layouts/root-layout";
-import { LoginPage } from "../../pages/auth/login/login-page";
-import { CatalogPage } from "../../pages/catalog/catalog-page";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "cart",
-        element: <div></div>,
+        element: <CartPage />,
       },
       {
         path: "auth",

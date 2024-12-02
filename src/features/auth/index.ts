@@ -1,1 +1,3 @@
-export * from "./auth-slice";
+export * from "./api/auth-api";
+export * from "./model/auth-slice";
+

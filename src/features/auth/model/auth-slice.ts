@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { UserT } from "../../shared/types/user-types";
-import { authApi } from "../../shared/services/auth";
-import { RootState } from "../../shared/store";
+import { RootState } from "../../../shared/store";
+import { UserT } from "../../../shared/types/user-types";
+import { authApi } from "../api/auth-api";
 
 interface InitialState {
   user: { user: UserT; jwt: string } | null;

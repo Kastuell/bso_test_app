@@ -1,6 +1,6 @@
-import { toast } from "sonner";
 import { Button, Form, FormProps, Input, Spin } from "antd";
-import { useLoginMutation } from "../../../shared/services/auth";
+import { toast } from "sonner";
+import { useLoginMutation } from "../../../features/auth/api/auth-api";
 
 type FieldType = {
   password: string;

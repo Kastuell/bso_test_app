@@ -1,7 +1,7 @@
 import { Button, Form, FormProps, Input, Spin } from "antd";
 import { useEffect } from "react";
 import { toast } from "sonner";
-import { useRegisterMutation } from "../../../shared/services/auth";
+import { useRegisterMutation } from "../../../features/auth/api/auth-api";
 
 type FieldType = {
   username: string;
